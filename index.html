@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESDS - Enabling the Future of Digital India | Cloud & Data Center Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-black: #0a0a0a;
+            --secondary-black: #1a1a1a;
+            --card-black: #242424;
+            --silver: #c0c0c0;
+            --bright-silver: #e8e8e8;
+            --chrome: #b8b8b8;
+            --accent-silver: #d4d4d4;
+            --dark-silver: #808080;
+            --neon-blue: #00d4ff;
+            --gradient-silver: linear-gradient(135deg, #434343 0%, #000000 100%);
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: var(--primary-black);
+            color: var(--bright-silver);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(192, 192, 192, 0.1);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 50%, #808080 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+            text-shadow: 0 0 30px rgba(192, 192, 192, 0.5);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--silver);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--silver));
+            transition: width 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--bright-silver);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .contact-btn {
+            background: linear-gradient(135deg, #333333 0%, #1a1a1a 100%);
+            border: 2px solid var(--silver);
+            color: var(--bright-silver);
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 0 20px rgba(192, 192, 192, 0.2);
+        }
+
+        .contact-btn:hover {
+            background: linear-gradient(135deg, #c0c0c0 0%, #808080 100%);
+            color: var(--primary-black);
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(192, 192, 192, 0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--primary-black);
+            position: relative;
+            padding: 140px 2rem 100px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(192, 192, 192, 0.1) 0%, transparent 50%),
+                linear-gradient(180deg, rgba(26, 26, 26, 0.8) 0%, rgba(10, 10, 10, 1) 100%);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(192,192,192,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(192, 192, 192, 0.1);
+            border: 1px solid rgba(192, 192, 192, 0.3);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--silver);
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 50%, #808080 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 50px rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--accent-silver);
+            font-weight: 300;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            color: var(--chrome);
+            max-width: 900px;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 100%);
+            color: var(--primary-black);
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(192, 192, 192, 0.3);
+            border: 2px solid transparent;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(192, 192, 192, 0.5);
+            background: linear-gradient(135deg, #e8e8e8 0%, #ffffff 100%);
+        }
+
+        .cta-button-secondary {
+            background: transparent;
+            color: var(--bright-silver);
+            border: 2px solid var(--silver);
+            box-shadow: 0 0 30px rgba(192, 192, 192, 0.2);
+        }
+
+        .cta-button-secondary:hover {
+            background: rgba(192, 192, 192, 0.1);
+            border-color: var(--bright-silver);
+            box-shadow: 0 0 40px rgba(192, 192, 192, 0.4);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--secondary-black);
+            padding: 80px 2rem;
+            position: relative;
+            border-top: 1px solid rgba(192, 192, 192, 0.1);
+            border-bottom: 1px solid rgba(192, 192, 192, 0.1);
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--silver) 50%, transparent 100%);
+            opacity: 0.3;
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(36, 36, 36, 0.8) 0%, rgba(26, 26, 26, 0.9) 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(192, 192, 192, 0.1);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(192, 192, 192, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .stat-card:hover::before {
+            left: 100%;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--silver);
+            box-shadow: 0 10px 40px rgba(192, 192, 192, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--chrome);
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: var(--chrome);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, rgba(36, 36, 36, 0.6) 0%, rgba(26, 26, 26, 0.8) 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(192, 192, 192, 0.1);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(192, 192, 192, 0.05) 0%, transparent 70%);
+            transition: all 0.5s;
+            opacity: 0;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+            top: -30%;
+            right: -30%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--silver);
+            box-shadow: 0 20px 60px rgba(192, 192, 192, 0.2);
+            background: linear-gradient(135deg, rgba(36, 36, 36, 0.8) 0%, rgba(26, 26, 26, 1) 100%);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(192, 192, 192, 0.2) 0%, rgba(128, 128, 128, 0.2) 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(192, 192, 192, 0.2);
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            color: var(--bright-silver);
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: var(--chrome);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--secondary-black);
+            padding: 100px 2rem;
+            border-top: 1px solid rgba(192, 192, 192, 0.1);
+        }
+
+        .testimonials-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(36, 36, 36, 0.6) 0%, rgba(26, 26, 26, 0.8) 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(192, 192, 192, 0.1);
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--silver);
+            box-shadow: 0 15px 50px rgba(192, 192, 192, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            color: rgba(192, 192, 192, 0.2);
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--chrome);
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(192, 192, 192, 0.1);
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #c0c0c0 0%, #808080 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary-black);
+            font-weight: 700;
+        }
+
+        .author-info h4 {
+            color: var(--bright-silver);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .author-info p {
+            color: var(--dark-silver);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-black);
+            color: var(--chrome);
+            padding: 80px 2rem 30px;
+            border-top: 1px solid rgba(192, 192, 192, 0.1);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.9rem;
+        }
+
+        .footer-section a {
+            color: var(--chrome);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .footer-section a:hover {
+            color: var(--bright-silver);
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(192, 192, 192, 0.1);
+            color: var(--dark-silver);
+        }
+
+        .footer-bottom a {
+            color: var(--silver);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--bright-silver);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">ESDS</div>
+            <nav>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#solutions">Solutions</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact" class="contact-btn">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🏆 Trusted by India's Fortune 500</div>
+            <h1>Enabling the Future of Digital India</h1>
+            <p class="hero-subtitle">We're an ethical Cloud & Data center service provider</p>
+            <p>Local By Roots, Global By Reach - Embrace a cloud that recognizes your potential and frees you to grow. Gain the All-in-one advantage with our Cloud infra management & SaaS solutions. Do you want a partner that goes beyond the basics?</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="cta-button">
+                    <span>Get Started</span>
+                    <span>→</span>
+                </a>
+                <a href="#services" class="cta-button cta-button-secondary">
+                    <span>Explore Services</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Years of Excellence</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">10M+</div>
+                <div class="stat-label">Smart Meters Hosted on Government Cloud</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">14+</div>
+                <div class="stat-label">Major Smart Cities on eNlight Cloud</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">246,437Cr+</div>
+                <div class="stat-label">Mudra Loans from Banking Cloud</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2.8M+</div>
+                <div class="stat-label">Security Events Addressed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1M+</div>
+                <div class="stat-label">Websites Scanned Per Day</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2 class="section-title">Our Cloud Services</h2>
+            <p class="section-subtitle">Managing cyber security for Top Banks & Cloud for 50 of India's Fortune 500</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">☁️</div>
+                <h3>Cloud Services</h3>
+                <p>Scalable and secure cloud infrastructure designed for businesses of all sizes. Experience unmatched reliability with 99.9% uptime guarantee and enterprise-grade security.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Colocation Services</h3>
+                <p>State-of-the-art data center facilities with enterprise-grade security and redundancy. Your infrastructure in our trusted hands with 24/7 monitoring.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💼</div>
+                <h3>SaaS Solutions</h3>
+                <p>Ready-to-deploy software solutions that accelerate your digital transformation journey with minimal investment and maximum returns.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔒</div>
+                <h3>Managed Security Services</h3>
+                <p>24/7 security monitoring and threat management protecting your critical assets from cyber threats. Over 2.8M+ security events addressed.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚙️</div>
+                <h3>Managed Services</h3>
+                <p>Complete IT infrastructure management allowing you to focus on your core business while we handle all your technology needs.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚀</div>
+                <h3>PaaS Solutions</h3>
+                <p>Platform-as-a-Service offerings that enable rapid application development and deployment at scale with cutting-edge infrastructure.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-container">
+            <div class="section-header">
+                <h2 class="section-title">Client Success Stories</h2>
+                <p class="section-subtitle">Trusted by India's leading enterprises across industries</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">At Surfa Coats, we decided to partner with ESDS for our cloud migration to streamline our IT operations in the textile industry. After facing challenges with previous providers, transitioning to ESDS was a game-changer. The process was smooth, ensuring our operations ran without interruption and our scalability improved significantly.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SN</div>
+                        <div class="author-info">
+                            <h4>Subodh Nair</h4>
+                            <p>Surfa Coats (India) Private Limited</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">ESDS has been instrumental in transforming our IT infrastructure since July 2019. As a healthcare provider, ensuring 24/7 service and data security is paramount. Their SAP HANA hosting services have not only met but exceeded our expectations, providing cost-effective solutions and reducing IT operational risks significantly.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SS</div>
+                        <div class="author-info">
+                            <h4>Sandesh Salankey</h4>
+                            <p>CFO, Span Healthcare P Ltd</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">We were on the search for a trusted partner that would address our IT needs. By selecting ESDS over other Cloud service providers, we achieved seamless implementation of the Cloud Customer Portal and SAP HANA services driven by unmatched pricing, scalability, and top-tier support. Operating flawlessly for years with zero downtime.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DS</div>
+                        <div class="author-info">
+                            <h4>Dhanoop Somashekar</h4>
+                            <p>ELGi Equipments Limited</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>ESDS Cloud</h3>
+                <ul>
+                    <li><a href="#">Cloud Services</a></li>
+                    <li><a href="#">Colocation</a></li>
+                    <li><a href="#">SaaS Solutions</a></li>
+                    <li><a href="#">Managed Services</a></li>
+                    <li><a href="#">Security Services</a></li>
+                    <li><a href="#">PaaS</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">News & Events</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact India</h3>
+                <ul>
+                    <li>+91-(253)-6636-500</li>
+                    <li>+91-(9253)-711-2233</li>
+                    <li>Toll Free: 1800-209-3006</li>
+                    <li>Email: info@esds.co.in</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Global Offices</h3>
+                <ul>
+                    <li>United Kingdom: +44-2034-576-776</li>
+                    <li>United States: +1-8443-245-054</li>
+                    <li><a href="#">Mumbai</a></li>
+                    <li><a href="#">Delhi</a></li>
+                    <li><a href="#">Bangalore</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ESDS Software Solution Ltd. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Legal</a> | <a href="#">Cookies</a></p>
+        </div>
+    </footer>
+
+    <!-- ThynkWISE Production AI Chatbot - Powered by Ayush -->
+    <script src="https://thynkbot.thynkwise.co.in/embed.js" data-bot-id="768eed67-68d0-4d75-9daa-1808e1e7bc76"></script>
+
+</body>
+</html>
