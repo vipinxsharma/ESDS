@@ -610,12 +610,42 @@
         </div>
     </footer>
 
-    <!-- HeyGen Interactive Avatar -->
-    <iframe 
-        src="https://labs.heygen.com/interactive-avatar/share?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiI1NjNlNTcyNmQ2ZmY0ZWY3ODM0YWEyY2M1%0D%0AYmRhNTgxZiIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3Yz%0D%0ALzU2M2U1NzI2ZDZmZjRlZjc4MzRhYTJjYzViZGE1ODFmL2Z1bGwvMi4yL3ByZXZpZXdfdGFyZ2V0%0D%0ALndlYnAiLCJuZWVkUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6IjMx%0D%0AYzFiMTQyZDQ1OTQ2ZmZiZmVmYjEyMWI5ZjY2Y2ZkIiwic2hhcmVfY29kZSI6ImQ5ODYwNTBjLTFm%0D%0AMmYtNDM4ZS1hOTI4LTVkMGI1MTYxYmQwZiIsInVzZXJuYW1lIjoiOTNkMDViNzc1OGIwNDQ1Yjli%0D%0AMzlhMzZlMDcwM2NjOGQifQ%3D%3D"
-        allow="microphone; camera"
-        style="position: fixed; bottom: 20px; right: 20px; width: 400px; height: 600px; border: none; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); z-index: 9999;">
-    </iframe>
+    <!-- HeyGen Interactive Avatar Button -->
+    <button id="heygen-avatar-btn" onclick="window.open('https://labs.heygen.com/interactive-avatar/share?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiI1NjNlNTcyNmQ2ZmY0ZWY3ODM0YWEyY2M1%0D%0AYmRhNTgxZiIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3Yz%0D%0ALzU2M2U1NzI2ZDZmZjRlZjc4MzRhYTJjYzViZGE1ODFmL2Z1bGwvMi4yL3ByZXZpZXdfdGFyZ2V0%0D%0ALndlYnAiLCJuZWVkUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6IjMx%0D%0AYzFiMTQyZDQ1OTQ2ZmZiZmVmYjEyMWI5ZjY2Y2ZkIiwic2hhcmVfY29kZSI6ImQ5ODYwNTBjLTFm%0D%0AMmYtNDM4ZS1hOTI4LTVkMGI1MTYxYmQwZiIsInVzZXJuYW1lIjoiOTNkMDViNzc1OGIwNDQ1Yjli%0D%0AMzlhMzZlMDcwM2NjOGQifQ%3D%3D', '_blank', 'width=500,height=700,scrollbars=no,resizable=yes')">
+        <span style="font-size: 24px;">💬</span>
+        <span>Talk to AI Assistant</span>
+    </button>
+
+    <style>
+        #heygen-avatar-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            background: linear-gradient(135deg, var(--accent-orange) 0%, #ff8533 100%);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(255, 102, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        #heygen-avatar-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(255, 102, 0, 0.4);
+        }
+        
+        #heygen-avatar-btn:active {
+            transform: translateY(-1px);
+        }
+    </style>
 
 </body>
 </html>
