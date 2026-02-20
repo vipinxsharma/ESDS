@@ -610,8 +610,29 @@
         </div>
     </footer>
 
-    <!-- HeyGen Streaming Avatar - Left Position -->
-    <script>!function(window){const host="https://labs.heygen.com",url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiI1NjNlNTcyNmQ2ZmY0ZWY3ODM0YWEyY2M1%0D%0AYmRhNTgxZiIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3Yz%0D%0ALzU2M2U1NzI2ZDZmZjRlZjc4MzRhYTJjYzViZGE1ODFmL2Z1bGwvMi4yL3ByZXZpZXdfdGFyZ2V0%0D%0ALndlYnAiLCJuZWVkUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6IjMx%0D%0AYzFiMTQyZDQ1OTQ2ZmZiZmVmYjEyMWI5ZjY2Y2ZkIiwidXNlcm5hbWUiOiI5M2QwNWI3NzU4YjA0%0D%0ANDViOWIzOWEzNmUwNzAzY2M4ZCJ9&inIFrame=1",clientWidth=document.body.clientWidth,wrapDiv=document.createElement("div");wrapDiv.id="heygen-streaming-embed";const container=document.createElement("div");container.id="heygen-streaming-container";const stylesheet=document.createElement("style");stylesheet.innerHTML=`\n  #heygen-streaming-embed {\n    z-index: 9999;\n    position: fixed;\n    left: 40px;\n    bottom: 40px;\n    width: 200px;\n    height: 200px;\n    border-radius: 50%;\n    border: 2px solid #fff;\n    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);\n    transition: all linear 0.1s;\n    overflow: hidden;\n\n    opacity: 0;\n    visibility: hidden;\n  }\n  #heygen-streaming-embed.show {\n    opacity: 1;\n    visibility: visible;\n  }\n  #heygen-streaming-embed.expand {\n    ${clientWidth<540?"height: 266px; width: 96%; left: 50%; transform: translateX(-50%);":"height: 366px; width: calc(366px * 16 / 9);"}\n    border: 0;\n    border-radius: 8px;\n  }\n  #heygen-streaming-container {\n    width: 100%;\n    height: 100%;\n  }\n  #heygen-streaming-container iframe {\n    width: 100%;\n    height: 100%;\n    border: 0;\n  }\n  `;const iframe=document.createElement("iframe");iframe.allowFullscreen=!1,iframe.title="Streaming Embed",iframe.role="dialog",iframe.allow="microphone",iframe.src=url;let visible=!1,initial=!1;window.addEventListener("message",(e=>{e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&("init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):"show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):"hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible)))})),container.appendChild(iframe),wrapDiv.appendChild(stylesheet),wrapDiv.appendChild(container),document.body.appendChild(wrapDiv)}(globalThis);</script>
+    <!-- HeyGen Interactive Avatar -->
+    <div id="heygen-avatar-container">
+        <iframe 
+            src="https://labs.heygen.com/interactive-avatar/share?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiI1NjNlNTcyNmQ2ZmY0ZWY3ODM0YWEyY2M1%0D%0AYmRhNTgxZiIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3Yz%0D%0ALzU2M2U1NzI2ZDZmZjRlZjc4MzRhYTJjYzViZGE1ODFmL2Z1bGwvMi4yL3ByZXZpZXdfdGFyZ2V0%0D%0ALndlYnAiLCJuZWVkUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6IjMx%0D%0AYzFiMTQyZDQ1OTQ2ZmZiZmVmYjEyMWI5ZjY2Y2ZkIiwic2hhcmVfY29kZSI6ImQ5ODYwNTBjLTFm%0D%0AMmYtNDM4ZS1hOTI4LTVkMGI1MTYxYmQwZiIsInVzZXJuYW1lIjoiOTNkMDViNzc1OGIwNDQ1Yjli%0D%0AMzlhMzZlMDcwM2NjOGQifQ%3D%3D"
+            allow="microphone; camera"
+            style="position: fixed; bottom: 20px; right: 20px; width: 400px; height: 600px; border: none; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); z-index: 9999; background: white;">
+        </iframe>
+    </div>
+    
+    <style>
+        #heygen-avatar-container iframe {
+            transition: all 0.3s ease;
+        }
+        
+        @media (max-width: 768px) {
+            #heygen-avatar-container iframe {
+                width: calc(100vw - 40px);
+                height: 500px;
+                right: 20px;
+                bottom: 20px;
+            }
+        }
+    </style>
 
 
 </body>
